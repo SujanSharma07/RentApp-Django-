@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Account Details{% endblock %}
+
+{% block body %}
+
+
+
+
+
+<table style="width:100%">
+    <tr>
+        {% for column in columns %} 
+      
+          <th>{{column.name | capfirst}}</th>
+
+        
+       
+        {% endfor %} 
+    </tr> 
+        {% for customer in context %} 
+        <tr>
+            <td>{{customer.id}}</td>
+            <td>{{customer.info}}</td>
+            <td>{{customer.time}}</td>
+            
+            <td>{{customer.Previous_Balance}}</td>
+            <td>{{customer.Rent}}</td>
+            <td>{{customer.Electricity_Units}}</td>
+            <td>{{customer.Electricity_Rate}}</td>
+            <td>{{customer.Other}}</td>
+            <td>{{customer.Total}}</td>
+            <td>{{customer.status}}</td>
+            
+          
+        </tr>  
+        {% endfor %} 
+      </table>
+ 
+     
+   
+  
+{% endblock %}
